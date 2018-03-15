@@ -43,7 +43,7 @@ def StartRocket ():
         
 def GetMass ():
     global RocketStarted
-    if RocketStarted
+    if RocketStarted:
         return Me + Mp * (Tburn - BurnTime)/Tburn
     else:
         return Me + Mp
