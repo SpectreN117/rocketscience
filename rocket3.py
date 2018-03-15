@@ -18,8 +18,8 @@ N1d = 9
 Ftotal = N1d * F1d
 Tburn = 180
 
-Vmax = (F1d * N1d * Tburn)/(Me + Mp)
-print(Vmax)
+Vmaxre = Ftotal*Tburn/Mp*log((Me+Mp) / Me)
+print(Vmaxre)
 
 def GetThrust ():
     global BurnTime
@@ -41,7 +41,14 @@ def StartRocket ():
         RocketStarted = True
         StartTime = rocket.shiptime
         
+def GetMass ():
+    global RocketStarted
+    if RocketStarted
+        return Me + Mp * (Tburn - BurnTime)/Tburn
+    else:
+        return Me + Mp
+        
 start = InputButton ((10, 400), "START", StartRocket, positioning = "physical", size=15)
 
-rocket = Rocket(earth, thrust=GetThrust, mass=Mp+Me, heading=radians(90))
+rocket = Rocket(earth, thrust=GetThrust, mass=GetMass, heading=radians(90))
 earth.run(rocket)
